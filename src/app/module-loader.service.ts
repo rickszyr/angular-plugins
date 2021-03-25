@@ -4,7 +4,7 @@ import * as ngRouter from "@angular/router";
 import * as ngCommon from "@angular/common";
 import * as ngForms from "@angular/forms";
 import * as rxjs from "rxjs";
-import * as canogaInterfaces from "interfaces";
+import * as interfaces from "interfaces";
 
 import { Compiler, Injectable, Injector } from "@angular/core";
 import { PluginCatalogService } from "interfaces";
@@ -72,7 +72,7 @@ export class ModuleLoaderService {
     "@angular/forms": ngForms,
     "@angular/router": ngRouter,
     "rxjs": rxjs,
-    "interfaces": canogaInterfaces
+    "interfaces": interfaces
   };
 
   externalModules = {
