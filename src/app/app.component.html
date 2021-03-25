@@ -1,14 +1,17 @@
 <h1>Welcome!</h1>
 
 <p>
-    <label>Path Remote</label><input #pathRemote value="http://localhost:3000/plugin2.module.umd.js">
+    <label>Path Remote</label><input #pathRemote value="http://localhost:3000/plugin1.module.js">
 </p>
 <p>
-    <label>Remote Name</label><input #remoteName value="Plugin2Module">
+    <label>Remote Name</label><input #remoteName value="Plugin1Module">
+</p>
+<p>
+    <label>Package Name</label><input #packageName value="plugin1">
 </p>
 
 <p>
-    <button (click)="loadModule(pathRemote.value, remoteName.value)">Load</button>
+    <button (click)="loadModule(pathRemote.value, remoteName.value, packageName.value)">Load</button>
 </p>
 
 <ol>
@@ -18,3 +21,5 @@
 <ng-container #putStuffHere></ng-container>
 
 <br>
+
+<ng-template #container></ng-template>

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Injector } from '@angular/core';
 import { IPlugin } from './iplugin';
 
 @Injectable({
@@ -9,5 +9,8 @@ export class PluginCatalogService {
 
   constructor() {
     this.installedPlugins = [];
+  }
+
+  public install(plugin: IPlugin){
   }
 }

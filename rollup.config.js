@@ -5,9 +5,9 @@ const commonModules = ["@angular/core", "@angular/common", "@angular/platform-br
 
 export default [
   {
-    input: 'dist/plugin1/esm2015/lib/plugin1.module.ngfactory.js',
+    input: 'dist/plugin1/esm2015/lib/plugin1.module.js',
     output: {
-      file: './server/public/plugin1.module.umd.js',
+      file: './server/public/plugin1.module.js',
       name: 'plugin1.module.umd.js',
       format: 'umd',
     },
@@ -15,13 +15,13 @@ export default [
     plugins: [nodeResolve(), commonjs()]
   },
   {
-    input: 'dist/plugin2/esm2015/lib/plugin2.module.ngfactory.js',
+    input: 'dist/plugin2/esm2015/lib/plugin2.module.js',
     output: {
-      file: './server/public/plugin2.module.umd.js',
+      file: './server/public/plugin2.module.js',
       name: 'Plugin2Module',
       format: 'umd',
     },
-    external: commonModules,
+    external: [...commonModules, "plugin1"],
     plugins: [nodeResolve(), commonjs()]
   }
 ];

@@ -6,6 +6,7 @@ import { PluginsModule } from 'interfaces';
 import { CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { DynamicComponentDirective } from './directives/dynamic-component.directive';
+import { ModuleLoaderService } from './module-loader.service';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import { DynamicComponentDirective } from './directives/dynamic-component.direct
     HttpClientModule,
     PluginsModule.forRoot()
   ],
-  providers: [],
+  providers: [ModuleLoaderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Type } from '@angular/core';
+import { ComponentFactoryResolver, Type } from '@angular/core';
 import { NgModule } from '@angular/core';
 import { IPlugin, PluginCatalogService } from 'interfaces';
+import { MainMenuService } from 'plugin1';
 import { Plugin2Component } from './plugin2.component';
 
 
@@ -21,8 +22,9 @@ export class Plugin2Module implements IPlugin {
     return Plugin2Component;
   }
 
-  constructor(pluginService: PluginCatalogService){
+  constructor(pluginService: PluginCatalogService, public resolver: ComponentFactoryResolver, menuservice: MainMenuService){
     console.log("Se registro Plugin 2");
     pluginService.installedPlugins.push(this);
+    menuservice.invoke();
   }
 }
